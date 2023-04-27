@@ -4,29 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-// const createTweetElement = function($tweetObj) {
-//   const $tweet = $(`
-//   <article class="tweet">
-//     <header>
-//       <h3 class="name"><img src="${$tweetObj.user.avatars}"/>${$tweetObj.user.name}</h3>
-//       <h3 class="username">${$tweetObj.user.handle}</h3>
-//     </header>
-//     <p>${$tweetObj.content.text}</p>
-//     <footer>
-//       <small>(${timeago.format($tweetObj.created_at)})</small>
-//       <div>
-//         <small>
-//           <i class="fas fa-solid fa-flag"></i>
-//           <i class="fas fa-sharp fa-solid fa-retweet"></i>
-//           <i class="fas fa-solid fa-heart"></i>
-//         </small>
-//       </div>
-//     </footer>
-//   </article>`)
-//   return $tweet;
-// };
-
 const createTweetElement =(tweetObj) => {
   const createTweet = {
     avatars: tweetObj.user.avatars,
@@ -49,7 +26,6 @@ const createTweetElement =(tweetObj) => {
   const $i1 = $('<i class="fas fa-solid fa-flag">')
   const $i2 = $('<i class="fas fa-sharp fa-solid fa-retweet">')
   const $i3 = $('<i class="fas fa-solid fa-heart">')
-
 
   $div1.append($img, $h31)
 
@@ -86,35 +62,53 @@ const renderTweets = function(tweets) {
   }
 }
 
-$(document).ready(function() {
-  
-  // renderTweets(data);
+const loadTweets = () => {
+  $.ajax({
+    method: 'GET',
+    url: '/tweets'
+  }).then((tweets) => {
+    renderTweets(tweets);
+  })
+}
 
-  const loadTweets = () => {
-    $.ajax({
-      method: 'GET',
-      url: '/tweets'
-    }).then((tweets) => {
-      renderTweets(tweets);
-    })
+
+const addTweet = function(event) {
+  event.preventDefault();
+
+  $('#error-message').text('').slideUp();
+
+  const formInput = $('#tweet-text');
+  const length = formInput.val().length;
+
+  if (length === 0 || typeof length === null) {
+    $('#error-message').text('Invalid tweet input, please enter a tweet!').slideDown();
+    return;
   }
 
-  loadTweets();
-  
+  if (length > 140){
+    $('#error-message').text('Tweet must be 140 characters or less!').slideDown();
+    return;
+  }
+
+ const data = $(this).serialize();
+
+ $.ajax({
+    method: 'POST',
+    url: '/tweets/',
+    data: data
+  }).then(() => {
+    formInput.val('')
+    loadTweets();
+  });
+
+}
+
+$(document).ready(function() {
+    
   //grab form from DOM
-  const $form = $('#create-tweet');
-
-  $form.on('submit', (event) => {
-    event.preventDefault();
-    const data = $form.serialize();
-    console.log(data)
-
-    $.ajax({
-      method: POST,
-      url: '/tweets/',
-      data: data
-    })
-  })
+  
+  $('form').on('submit', addTweet);
+  loadTweets();
 });
 
 

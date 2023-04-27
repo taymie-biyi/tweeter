@@ -32,3 +32,8 @@ button {
 .red-counter {
   color: red;
 }
+
+#error-message {
+  color: red;
+  display: none;
+}

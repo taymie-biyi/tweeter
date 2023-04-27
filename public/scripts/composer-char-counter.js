@@ -12,6 +12,10 @@ $(document).ready(function() {
     } else {
       $(counter).removeClass('red-counter');
     }
+
+    
   });
+
+
 
 });

@@ -64,7 +64,14 @@ $(document).ready(function() {
   
   renderTweets(data);
 
-  
+  //grab form from DOM
+  const $form = $('#create-tweet');
+
+  $form.on('submit', (event) => {
+    event.preventDefault();
+    const data = $form.serialize();
+    console.log(data)
+  })
 });
 
 

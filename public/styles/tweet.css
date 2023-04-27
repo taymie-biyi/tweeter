@@ -40,7 +40,17 @@ article p {
 
 article i {
   color: #07096e;
+  padding: 0.3em;
 }
 article i:hover {
   color: #f50000;
+}
+
+header h3{
+  display: flex;
+  align-items: center;
+}
+
+h3 img {
+  padding: 0.5em;
 }

@@ -27,7 +27,8 @@
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
   <!-- External JS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
@@ -58,7 +59,7 @@
   <main class="container">
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      <form action="/tweets/" method="POST">
+      <form action="/tweets/" method="POST" id="create-tweet">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
         <div>
@@ -68,59 +69,7 @@
       </form>
     </section>
     <!--Tweet samples-->
-    <section>
-      <article class="tweet">
-        <header>
-          <h3 class="name">Rhoda Jacobs</h3>
-          <h3 class="username">@MrsJacobs</h3>
-        </header>
-        <p>Hello world!</p>
-        <footer>
-            <small>2 days ago</small>
-            <div>
-              <small>
-                <i class="fas fa-solid fa-flag"></i>
-                <i class="fas fa-solid fa-comment"></i>
-                <i class="fas fa-solid fa-heart"></i>
-              </small>
-            </div>
-        </footer>
-      </article>
-      <article class="tweet">
-        <header>
-          <h3 class="name">Lisa Williams</h3>
-          <h3 class="username">@MsWillis</h3>
-        </header>
-        <p>I enjoy coding!</p>
-        <footer>
-            <small>10 days ago</small>
-            <div>
-              <small>
-                <i class="fas fa-solid fa-flag"></i>
-                <i class="fas fa-solid fa-comment"></i>
-                <i class="fas fa-solid fa-heart"></i>
-              </small>
-            </div>
-        </footer>
-      </article>
-      <article class="tweet">
-        <header>
-          <h3 class="name">Newton</h3>
-          <h3 class="username">@SirIsaac</h3>
-        </header>
-        <p>If I have seen further, it is by standing on the shoulders of giants</p>
-        <footer>
-            <small>4 hours ago</small>
-            <div>
-              <small>
-                <i class="fas fa-solid fa-flag"></i>
-                <i class="fas fa-solid fa-comment"></i>
-                <i class="fas fa-solid fa-heart"></i>
-              </small>
-            </div>
-        </footer>
-      </article>
-    </section>
+    <section id="tweets-container"></section>
 
   </main>
 </body>

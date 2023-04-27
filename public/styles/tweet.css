@@ -46,11 +46,11 @@ article i:hover {
   color: #f50000;
 }
 
-header h3{
+header div{
   display: flex;
   align-items: center;
 }
 
-h3 img {
+article.tweet img {
   padding: 0.5em;
 }

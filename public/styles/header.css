@@ -12,9 +12,10 @@ header.main-header {
 
 header.main-header h2 {
   margin: 5px;
+  color:#ffffff;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1160px) {
   header.main-header {
     flex: 1;
     padding: 0;

@@ -16,6 +16,7 @@ html {
 
 body {
   color: #545149;
+  width: 100%;
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
@@ -39,7 +40,7 @@ main.container {
   
   main.container {
     margin: 250px 70px 50px 125px;
-    flex: 2;
+    flex: 1.5;
   }
 
 }

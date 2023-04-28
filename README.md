@@ -13,8 +13,8 @@ This repository is the starter code for the project: Students will fork and clon
 4. Go to <http://localhost:8080/> in your browser.
 
 ## Final Product
-!["Screenshot of Home page on Desktop Screen"](https://github.com/taymie-biyi/tweeter/blob/master/docs/Screenshot%202023-04-28%20at%203.00.41%20PM.png?raw=true)
-!["Screenshot of Home Page on Mobile Screen"](https://github.com/taymie-biyi/tweeter/blob/master/docs/Screenshot%202023-04-28%20at%203.25.21%20PM.png?raw=true)
+!["Screenshot of Home page on Desktop Screen"](https://github.com/taymie-biyi/tweeter/blob/master/docs/Screenshot%202023-04-28%20at%203.39.25%20PM.png?raw=true)
+!["Screenshot of Home Page on Mobile Screen"](https://github.com/taymie-biyi/tweeter/blob/master/docs/Screenshot%202023-04-28%20at%203.44.34%20PM.png?raw=true)
 
 ## Dependencies
 

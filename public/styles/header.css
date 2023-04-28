@@ -1,11 +1,24 @@
-.main-header {
+header.main-header {
   height: 520px;
+  padding-top: 120px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   background-color: #4b6eb3;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
 
+header.main-header h2 {
+  margin: 5px;
+}
+
+@media only screen and (min-width: 1024px) {
+  header.main-header {
+    flex: 1;
+    padding: 0;
+    height: 400px;
+    margin: 250px 125px 50px 70px;
+  }
+}

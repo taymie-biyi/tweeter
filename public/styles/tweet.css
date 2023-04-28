@@ -10,7 +10,6 @@ article.tweet:hover {
 
 article.tweet header {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   padding-left: 1em;
   padding-right: 1em;

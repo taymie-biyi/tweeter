@@ -24,9 +24,22 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-main {
+
+ 
+main.container {
   width: 90%;
-  margin: auto;
+  margin: 70px auto;
 }
 
+@media only screen and (min-width: 1024px) {
 
+  body {
+    display: flex;
+   }
+  
+  main.container {
+    margin: 250px 70px 50px 125px;
+    flex: 2;
+  }
+
+}
